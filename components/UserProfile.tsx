@@ -12,7 +12,7 @@ export default function UserProfile({ userProfile, onEditProfile }: UserProfileP
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold text-gray-900">Patient Info</h2>
+        <h2 className="text-lg font-semibold text-gray-900">My Profile</h2>
         <button onClick={onEditProfile} className="cursor-pointer">
           <MoreHorizontal className="w-5 h-5 text-gray-400" />
         </button>

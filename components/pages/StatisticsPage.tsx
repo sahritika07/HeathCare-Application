@@ -265,6 +265,7 @@ export default function StatisticsPage({ healthData }: StatisticsPageProps) {
           <EnhancedWeeklySteps healthData={healthData} />
         </div>
 
+
         {/* Daily Goals Completion - ORIGINAL */}
         {/* <div className="bg-white rounded-xl p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Today's Goal Completion</h2>
