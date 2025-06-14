@@ -1,11 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import { X, Save } from "lucide-react"
+import { X, Save, Upload } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 interface UserProfileModalProps {
   userProfile: any
@@ -28,6 +34,20 @@ export default function UserProfileModal({ userProfile, setUserProfile, onClose 
     })
   }
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setFormData({
+          ...formData,
+          image: reader.result as string,
+        })
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
@@ -38,33 +58,47 @@ export default function UserProfileModal({ userProfile, setUserProfile, onClose 
           </Button>
         </div>
 
+        {/* Image Upload */}
+        <div className="mb-6 text-center">
+          {formData.image ? (
+            <img
+              src={formData.image}
+              alt="Profile Preview"
+              className="mx-auto w-24 h-24 rounded-full object-cover"
+            />
+          ) : (
+            <div className="w-24 h-24 mx-auto bg-gray-200 rounded-full" />
+          )}
+          <Label htmlFor="uploadImage" className="mt-2 block text-sm text-blue-600 cursor-pointer">
+            <Upload className="inline w-4 h-4 mr-1" />
+            Upload Image
+          </Label>
+          <Input
+            id="uploadImage"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleImageChange}
+          />
+        </div>
+
+        {/* Form Grid */}
         <div className="grid grid-cols-2 gap-6">
           <div>
             <Label htmlFor="name">Full Name</Label>
-            <Input
-              id="name"
-              value={formData.name}
-              onChange={(e) => handleChange("name", e.target.value)}
-              className="mt-1"
-            />
+            <Input id="name" value={formData.name} onChange={(e) => handleChange("name", e.target.value)} />
           </div>
 
           <div>
             <Label htmlFor="age">Age</Label>
-            <Input
-              id="age"
-              type="number"
-              value={formData.age}
-              onChange={(e) => handleChange("age", e.target.value)}
-              className="mt-1"
-            />
+            <Input id="age" type="number" value={formData.age} onChange={(e) => handleChange("age", e.target.value)} />
           </div>
 
           <div>
             <Label htmlFor="gender">Gender</Label>
             <Select value={formData.gender} onValueChange={(value) => handleChange("gender", value)}>
               <SelectTrigger className="mt-1">
-                <SelectValue />
+                <SelectValue placeholder="Select Gender" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="Male">Male</SelectItem>
@@ -78,7 +112,7 @@ export default function UserProfileModal({ userProfile, setUserProfile, onClose 
             <Label htmlFor="bloodGroup">Blood Group</Label>
             <Select value={formData.bloodGroup} onValueChange={(value) => handleChange("bloodGroup", value)}>
               <SelectTrigger className="mt-1">
-                <SelectValue />
+                <SelectValue placeholder="Select Blood Group" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="A+">A+</SelectItem>
@@ -117,33 +151,17 @@ export default function UserProfileModal({ userProfile, setUserProfile, onClose 
 
           <div className="col-span-2">
             <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              onChange={(e) => handleChange("email", e.target.value)}
-              className="mt-1"
-            />
+            <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} />
           </div>
 
           <div className="col-span-2">
             <Label htmlFor="phone">Phone</Label>
-            <Input
-              id="phone"
-              value={formData.phone}
-              onChange={(e) => handleChange("phone", e.target.value)}
-              className="mt-1"
-            />
+            <Input id="phone" value={formData.phone} onChange={(e) => handleChange("phone", e.target.value)} />
           </div>
 
           <div className="col-span-2">
             <Label htmlFor="address">Address</Label>
-            <Input
-              id="address"
-              value={formData.address}
-              onChange={(e) => handleChange("address", e.target.value)}
-              className="mt-1"
-            />
+            <Input id="address" value={formData.address} onChange={(e) => handleChange("address", e.target.value)} />
           </div>
 
           <div className="col-span-2">
@@ -152,7 +170,6 @@ export default function UserProfileModal({ userProfile, setUserProfile, onClose 
               id="emergencyContact"
               value={formData.emergencyContact}
               onChange={(e) => handleChange("emergencyContact", e.target.value)}
-              className="mt-1"
             />
           </div>
         </div>

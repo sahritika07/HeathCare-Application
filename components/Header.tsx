@@ -4,7 +4,12 @@ import { Search, Bell, Plus, LogOut, Moon, Sun } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { useAuth } from "@/contexts/AuthContext"
 import { useTheme } from "@/contexts/ThemeContext"
 import { useRouter } from "next/navigation"
@@ -23,6 +28,13 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
     logout()
     router.push("/auth/login")
   }
+
+  const getInitials = (name: string) =>
+    name
+      ?.split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
 
   return (
     <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 sm:px-6 py-4 transition-colors">
@@ -44,7 +56,12 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Dark Mode Toggle */}
-          <Button variant="ghost" size="icon" onClick={toggleDarkMode} className="text-gray-600 dark:text-gray-300">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleDarkMode}
+            className="text-gray-600 dark:text-gray-300"
+          >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </Button>
 
@@ -55,12 +72,12 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Avatar className="w-8 h-8 sm:w-10 sm:h-10 cursor-pointer">
-                <AvatarImage src="/placeholder.svg?height=40&width=40" />
+                <AvatarImage
+                  src={userProfile.image || "/placeholder.svg?height=40&width=40"}
+                  alt="Profile"
+                />
                 <AvatarFallback className="bg-cyan-400 text-white text-sm">
-                  {userProfile.name
-                    .split(" ")
-                    .map((n: string) => n[0])
-                    .join("")}
+                  {getInitials(userProfile.name || "U")}
                 </AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
