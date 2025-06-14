@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function EnhancedAnatomySection() {
   const healthData = [
     {
@@ -88,7 +90,14 @@ export default function EnhancedAnatomySection() {
         <div className="w-full md:w-1/2 bg-white rounded-xl shadow-sm p-4 relative">
           {/* Placeholder for human anatomy image */}
           <div className="w-full h-64 bg-gradient-to-b from-gray-50 to-white rounded-lg flex items-center justify-center relative">
-            <span className="text-gray-400 text-sm">Anatomy Image Placeholder</span>
+            <Image  
+            src="/images/human.png"   // Path relative to /public
+            alt="Human Anatomy"
+            width={200}
+            height={80}
+            className="object-contain"
+           
+          />
 
             {/* Health indicators */}
             <div className="absolute top-1/3 right-1/4">

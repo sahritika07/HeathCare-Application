@@ -17,7 +17,7 @@ import AppointmentsPage from "@/components/pages/AppointmentsPage"
 import UserProfileModal from "@/components/UserProfileModal"
 import UserProfile from "@/components/UserProfile"
 import CalendarView from "@/components/CalendarView"
-import PatientInfo from "@/components/PatientInfo"
+// import PatientInfo from "@/components/PatientInfo"
 import HealthMetricsPieChart from "@/components/HealthMetricsPieChart"
 import UpcomingSchedule from "@/components/UpcomingSchedule"
 import MedicalHistory from "@/components/MedicalHistory"
@@ -119,7 +119,7 @@ export default function HealthcareDashboard() {
               <div className="p-4">
                 <UserProfile userProfile={userProfile} onEditProfile={() => setShowProfileModal(true)} />
                 <CalendarView />
-                <PatientInfo />
+                {/* <PatientInfo /> */}
                 <HealthMetricsPieChart healthData={healthData} />
                 <UpcomingSchedule />
                 <MedicalHistory />

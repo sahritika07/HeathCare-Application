@@ -26,14 +26,16 @@ export default function DashboardMainContent({
       {/* 1. Enhanced Anatomy Section */}
       <EnhancedAnatomySection />
 
-      {/* 2. Daily Health Logs */}
-      <DailyHealthLogs healthData={healthData} setHealthData={setHealthData} />
-
       {/* 3. Health Goals Charts - Stacked Vertically */}
       <div className="space-y-6 mb-6">
         <HealthGoalsCompletionChart healthData={healthData} />
         <WellnessRadarChart healthData={healthData} />
       </div>
+
+      {/* 2. Daily Health Logs */}
+      <DailyHealthLogs healthData={healthData} setHealthData={setHealthData} />
+
+      
 
       {/* 4. Health Score & Sleep Tracking */}
       <HealthScoreSection />
