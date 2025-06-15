@@ -39,10 +39,10 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
   return (
     <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 sm:px-6 py-4 transition-colors">
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4 sm:space-x-8">
+        {/* <div className="flex items-center space-x-4 sm:space-x-8">
           <h1 className="text-xl sm:text-2xl font-bold">
             <span className="text-cyan-400">Health</span>
-            <span className="text-gray-800 dark:text-gray-200">care.</span>
+            <span className="text-gray-800 dark:text-gray-200">Plus.</span>
           </h1>
 
           <div className="relative hidden md:block">
@@ -52,7 +52,7 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
               className="pl-10 w-60 lg:w-80 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-600"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Dark Mode Toggle */}
@@ -65,9 +65,9 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </Button>
 
-          <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-300">
+          {/* <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-300">
             <Bell className="w-5 h-5" />
-          </Button>
+          </Button> */}
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

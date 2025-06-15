@@ -22,6 +22,10 @@ import HealthMetricsPieChart from "@/components/HealthMetricsPieChart"
 import UpcomingSchedule from "@/components/UpcomingSchedule"
 import MedicalHistory from "@/components/MedicalHistory"
 
+
+import { Button } from "@/components/ui/button"
+import { Bell} from "lucide-react"
+
 export default function HealthcareDashboard() {
   const [activePage, setActivePage] = useState("dashboard")
   const [showProfileModal, setShowProfileModal] = useState(false)
@@ -39,13 +43,13 @@ export default function HealthcareDashboard() {
 
   // User profile state
   const [userProfile, setUserProfile] = useState({
-    name: "Hudson Dylan",
-    age: 49,
+    name: "JOHNSON",
+    age: 35,
     gender: "Male",
     weight: 67,
     height: 175,
     bloodGroup: "A+",
-    email: "hudson.dylan@email.com",
+    email: "alanwalker@email.com",
     phone: "+1 (555) 123-4567",
     address: "123 Health Street, Medical City, MC 12345",
     emergencyContact: "Jane Dylan - +1 (555) 987-6543",
@@ -78,7 +82,7 @@ export default function HealthcareDashboard() {
   return (
     <div className="h-screen bg-gray-50 dark:bg-gray-900 flex flex-col overflow-hidden transition-colors">
       {/* Header */}
-      <Header userProfile={userProfile} onProfileClick={() => setShowProfileModal(true)} />
+      {/* <Header userProfile={userProfile} onProfileClick={() => setShowProfileModal(true)} /> */}
 
       {/* Main Content Area */}
       <div className="flex flex-1 overflow-hidden">
@@ -114,10 +118,14 @@ export default function HealthcareDashboard() {
               />
             </div>
 
+            
+
             {/* Right Sidebar - Hidden on mobile, shown on lg+ */}
             <div className="hidden lg:block lg:flex-[2] bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700">
+             <Header userProfile={userProfile} onProfileClick={() => setShowProfileModal(true)} /> 
               <div className="p-4">
                 <UserProfile userProfile={userProfile} onEditProfile={() => setShowProfileModal(true)} />
+                                        
                 <CalendarView />
                 {/* <PatientInfo /> */}
                 <HealthMetricsPieChart healthData={healthData} />

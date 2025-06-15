@@ -45,10 +45,10 @@ export default function Sidebar({ activePage, setActivePage, onClose }: SidebarP
       <div>
         <h2 className="text-2xl font-bold mb-8">
           <span className="text-cyan-400">Health</span>
-          <span className="text-gray-800 dark:text-gray-200">care.</span>
+          <span className="text-blue-800 dark:text-gray-200">Plus.</span>
         </h2>
 
-        <h2 className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">General</h2>
+        {/* <h2 className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">General</h2> */}
 
         <nav className="space-y-2">
           {navigationItems.map((item) => (

@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Healthcare Dashboard",
+  title: "HealthPlus Dashboard",
   description: "Comprehensive healthcare management system",
     generator: 'v0.dev'
 }

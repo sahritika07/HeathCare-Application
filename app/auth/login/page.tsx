@@ -53,7 +53,7 @@ export default function LoginPage() {
                 <span className="text-white text-2xl font-bold">H</span>
               </div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent">
-                Healthcare
+                HealthPlus
               </h1>
               <p className="text-gray-500 mt-2">Welcome back! Please sign in to your account</p>
             </div>

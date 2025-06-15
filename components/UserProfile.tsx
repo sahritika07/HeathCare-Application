@@ -9,14 +9,8 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ userProfile, onEditProfile }: UserProfileProps) {
-  const getInitials = (name: string) =>
-    name
-      .split(" ")
-      .map((n: string) => n[0])
-      .join("")
-
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
+    <div className="bg-blue-300 rounded-xl p-6 shadow-sm mb-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900">My Profile</h2>
         <button onClick={onEditProfile} className="cursor-pointer">
@@ -26,9 +20,12 @@ export default function UserProfile({ userProfile, onEditProfile }: UserProfileP
 
       <div className="flex items-start space-x-4">
         <Avatar className="w-20 h-20">
-          <AvatarImage src={userProfile.image || "/placeholder.svg"} />
+          <AvatarImage src="/placeholder.svg?height=80&width=80" />
           <AvatarFallback className="bg-gray-200 text-gray-600 text-lg">
-            {getInitials(userProfile.name || "")}
+            {userProfile.name
+              .split(" ")
+              .map((n: string) => n[0])
+              .join("")}
           </AvatarFallback>
         </Avatar>
 
@@ -63,9 +60,9 @@ export default function UserProfile({ userProfile, onEditProfile }: UserProfileP
             <span className="text-red-600 text-xs">❤️</span>
           </div>
           <div>
-            <p className="text-xs text-gray-500">Heart Rate</p>
+            <p className="text-xs text-gray-500">Heart rate</p>
             <p className="text-sm font-semibold">
-              75 <span className="text-xs text-gray-400">bpm</span>
+              120/80 <span className="text-xs text-gray-400">mm Hg</span>
             </p>
           </div>
         </div>

@@ -74,7 +74,7 @@ export default function RegisterPage() {
                 <span className="text-white text-2xl font-bold">H</span>
               </div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent">
-                Healthcare
+                HealthPlus
               </h1>
               <p className="text-gray-500 mt-2">Create your account to get started</p>
             </div>
