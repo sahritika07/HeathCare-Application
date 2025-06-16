@@ -121,7 +121,7 @@ export default function HealthcareDashboard() {
             
 
             {/* Right Sidebar - Hidden on mobile, shown on lg+ */}
-            <div className="hidden lg:block lg:flex-[2] bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700">
+            <div className="hidden lg:block lg:flex-[2] bg-gray-500 dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700">
              <Header userProfile={userProfile} onProfileClick={() => setShowProfileModal(true)} /> 
               <div className="p-4">
                 <UserProfile userProfile={userProfile} onEditProfile={() => setShowProfileModal(true)} />
