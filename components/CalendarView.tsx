@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button"
 
 export default function CalendarView() {
   const calendarData = [
-    { day: "Mon", date: 25, times: ["10:00", "11:00"] },
+    { day: "Mon", date: 25, times: ["10:00", "11:00","03:00"] },
     { day: "Tue", date: 26, times: ["08:00", "09:00"] },
-    { day: "Wed", date: 27, times: ["12:00"] },
+    { day: "Wed", date: 27, times: ["12:00","04:00","12:00"] },
     { day: "Thu", date: 28, times: ["10:00", "11:00"] },
-    { day: "Fri", date: 29, times: ["14:00"] },
-    { day: "Sat", date: 30, times: ["12:00", "14:00"] },
+    { day: "Fri", date: 29, times: ["04:00","12:00"] },
+    { day: "Sat", date: 30, times: ["09:00", "12:00","04:00"] },
     { day: "Sun", date: 31, times: ["09:00"] },
   ]
 
@@ -59,6 +59,11 @@ export default function CalendarView() {
           <p className="text-xs opacity-75">11:00-12:00</p>
           <p className="text-xs opacity-75">Dr. Kevin Djones</p>
         </div>
+        {/* <div className="bg-indigo-100 text-indigo-900 p-3 rounded-lg">
+          <h3 className="font-semibold text-sm">Physiotherapy</h3>
+          <p className="text-xs opacity-75">11:00-12:00</p>
+          <p className="text-xs opacity-75">Dr. Kevin Djones</p>
+        </div> */}
       </div>
     </div>
   )
