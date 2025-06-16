@@ -13,7 +13,7 @@ export default function CalendarView() {
   ]
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
+    <div className="bg-indigo-50 rounded-xl p-6 shadow-sm mb-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-900">October 2021</h2>
         <div className="flex space-x-1">
@@ -54,7 +54,7 @@ export default function CalendarView() {
           <p className="text-xs opacity-90">Dr. Cameron Williamson</p>
         </div>
 
-        <div className="bg-indigo-100 text-indigo-900 p-3 rounded-lg">
+        <div className="bg-indigo-400 text-indigo-900 p-3 rounded-lg">
           <h3 className="font-semibold text-sm">Physiotherapy</h3>
           <p className="text-xs opacity-75">11:00-12:00</p>
           <p className="text-xs opacity-75">Dr. Kevin Djones</p>

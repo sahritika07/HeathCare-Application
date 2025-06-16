@@ -6,7 +6,7 @@ interface SimpleAppointmentCardProps {
 
 export default function SimpleAppointmentCard({ title, time, icon }: SimpleAppointmentCardProps) {
   return (
-    <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+    <div className="bg-white p-4 rounded-lg border border-indigo-100">
       <div className="flex items-center justify-between mb-2">
         <span className="text-lg">{icon}</span>
       </div>

@@ -62,7 +62,7 @@ export default function HealthMetricsPieChart({ healthData }: HealthMetricsPieCh
   }
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
+    <div className="bg-indigo-50 rounded-xl p-6 shadow-sm mb-6">
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Daily Goals Progress</h2>
 
       <div className="h-64">
