@@ -36,7 +36,7 @@ export default function CalendarView() {
                 <div
                   key={index}
                   className={`text-xs px-1 py-1 rounded ${
-                    day.date === 26 && time === "09:00" ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-600"
+                    day.date === 26 && time === "09:00" || day.date === 28 && time === "10:00"  || day.date === 30 && time === "04:00" ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-600"
                   }`}
                 >
                   {time}

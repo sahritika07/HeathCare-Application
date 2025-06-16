@@ -19,7 +19,7 @@ export default function UserProfile({ userProfile, onEditProfile }: UserProfileP
       </div>
 
       <div className="flex items-start space-x-4">
-        <Avatar className="w-20 h-20">
+        {/* <Avatar className="w-20 h-20">
           <AvatarImage src="/placeholder.svg?height=80&width=80" />
           <AvatarFallback className="bg-gray-200 text-gray-600 text-lg">
             {userProfile.name
@@ -27,7 +27,20 @@ export default function UserProfile({ userProfile, onEditProfile }: UserProfileP
               .map((n: string) => n[0])
               .join("")}
           </AvatarFallback>
-        </Avatar>
+        </Avatar> */}
+
+        <Avatar className="w-20 h-20">
+  <AvatarImage
+    src={userProfile?.imageUrl || "/images/pic.png"} // Default image fallback
+    alt={userProfile?.name || "User Avatar"}
+  />
+  <AvatarFallback className="bg-gray-200 text-gray-600 text-lg">
+    {userProfile?.name
+      ?.split(" ")
+      .map((n: string) => n[0])
+      .join("") || "U"}
+  </AvatarFallback>
+</Avatar>
 
         <div className="flex-1">
           <div className="flex items-center justify-between mb-2">

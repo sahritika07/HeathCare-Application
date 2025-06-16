@@ -173,7 +173,7 @@ export default function HealthcareDashboard() {
                 {/* <PatientInfo /> */}
                 <UpcomingSchedule />
                 <MedicalHistory />
-                <HealthMetricsPieChart healthData={healthData} />               
+                            
                   <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           <div className="bg-green-50 p-4 border-b border-green-100">
             <h2 className="text-xl font-semibold text-green-900 flex items-center">
@@ -226,6 +226,7 @@ export default function HealthcareDashboard() {
             ))}
           </div>
         </div>
+        <HealthMetricsPieChart healthData={healthData} />   
               </div>
             </div>
             </div>
