@@ -5,15 +5,15 @@ export default function CalendarView() {
   const calendarData = [
     { day: "Mon", date: 25, times: ["10:00", "11:00","03:00"] },
     { day: "Tue", date: 26, times: ["08:00", "09:00"] },
-    { day: "Wed", date: 27, times: ["12:00","04:00","12:00"] },
+    { day: "Wed", date: 27, times: ["12:00","04:00","05:00"] },
     { day: "Thu", date: 28, times: ["10:00", "11:00"] },
-    { day: "Fri", date: 29, times: ["04:00","12:00"] },
+    { day: "Fri", date: 29, times: ["09:00","12:00"] },
     { day: "Sat", date: 30, times: ["09:00", "12:00","04:00"] },
     { day: "Sun", date: 31, times: ["09:00"] },
   ]
 
   return (
-    <div className="bg-indigo-50 rounded-xl p-6 shadow-sm mb-6">
+    <div className="bg-gray-50 rounded-xl p-6 shadow-sm mb-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-900">October 2021</h2>
         <div className="flex space-x-1">

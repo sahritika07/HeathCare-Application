@@ -56,14 +56,14 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Dark Mode Toggle */}
-          <Button
+          {/* <Button
             variant="ghost"
             size="icon"
             onClick={toggleDarkMode}
             className="text-gray-600 dark:text-gray-300"
           >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </Button>
+          </Button> */}
 
           {/* <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-300">
             <Bell className="w-5 h-5" />
@@ -71,14 +71,29 @@ export default function Header({ userProfile, onProfileClick }: HeaderProps) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
+               {/* <Avatar className="w-20 h-20"> */}
+  {/* <AvatarImage
+    src={userProfile?.imageUrl || "/images/pic.png"} // Default image fallback
+    alt={userProfile?.name || "User Avatar"}
+  />
+  <AvatarFallback className="bg-gray-200 text-gray-600 text-lg">
+    {userProfile?.name
+      ?.split(" ")
+      .map((n: string) => n[0])
+      .join("") || "U"}
+  </AvatarFallback>
+</Avatar> */}
               <Avatar className="w-8 h-8 sm:w-10 sm:h-10 cursor-pointer">
-                <AvatarImage
-                  src={userProfile.image || "/placeholder.svg?height=40&width=40"}
-                  alt="Profile"
-                />
-                <AvatarFallback className="bg-cyan-400 text-white text-sm">
-                  {getInitials(userProfile.name || "U")}
-                </AvatarFallback>
+               <AvatarImage
+    src={userProfile?.imageUrl || ""} // Default image fallback
+    alt={userProfile?.name || "User Avatar"}
+  />
+  <AvatarFallback className="bg-gray-200 text-gray-600 text-lg">
+    {userProfile?.name
+      ?.split(" ")
+      .map((n: string) => n[0])
+      .join("") || "U"}
+  </AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
