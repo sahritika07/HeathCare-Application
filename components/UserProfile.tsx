@@ -10,7 +10,7 @@ interface UserProfileProps {
 
 export default function UserProfile({ userProfile, onEditProfile }: UserProfileProps) {
   return (
-    <div className="bg-gray-50 rounded-xl p-6 shadow-sm mb-6 -mt-6 ">
+    <div className="bg-[#fafbff] rounded-xl p-6 shadow-sm mb-6 -mt-6 ">
       <div className="flex items-center justify-between mb-4 ">
         <h2 className="text-lg font-semibold text-gray-900">My Profile</h2>
         <button onClick={onEditProfile} className="cursor-pointer">

@@ -13,7 +13,7 @@ export default function CalendarView() {
   ]
 
   return (
-    <div className="bg-gray-50 rounded-xl p-6 shadow-sm mb-6">
+    <div className="bg-[#fafbff] rounded-xl p-6 shadow-sm mb-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-900">October 2021</h2>
         <div className="flex space-x-1">

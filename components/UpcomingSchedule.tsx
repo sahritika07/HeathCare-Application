@@ -13,7 +13,7 @@ export default function UpcomingSchedule() {
   }
 
   return (
-    <div className="bg-indigo-50 rounded-xl p-6 shadow-sm">
+    <div className="bg-[#fafbff] rounded-xl p-6 shadow-sm">
       <h2 className="text-xl font-semibold text-gray-900 mb-6">The Upcoming Schedule</h2>
 
       <div className="space-y-6 ">

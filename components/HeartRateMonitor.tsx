@@ -32,7 +32,7 @@ export default function HeartRateMonitor() {
   ]
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-sm">
+    <div className="bg-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-sm">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-3">
@@ -89,15 +89,15 @@ export default function HeartRateMonitor() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-3 gap-4 mb-8">
-        <div className="bg-white dark:bg-gray-700 rounded-lg p-4 text-center">
+        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{avgHeartRate}</div>
           <div className="text-sm text-gray-500 dark:text-gray-400">Average</div>
         </div>
-        <div className="bg-white dark:bg-gray-700 rounded-lg p-4 text-center">
+        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{maxHeartRate}</div>
           <div className="text-sm text-gray-500 dark:text-gray-400">Max</div>
         </div>
-        <div className="bg-white dark:bg-gray-700 rounded-lg p-4 text-center">
+        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{minHeartRate}</div>
           <div className="text-sm text-gray-500 dark:text-gray-400">Min</div>
         </div>
@@ -108,7 +108,7 @@ export default function HeartRateMonitor() {
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Heart Rate Zones</h3>
         <div className="space-y-3">
           {heartRateZones.map((zone, index) => (
-            <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-700 rounded-lg">
+            <div key={index} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
               <div className="flex items-center space-x-3">
                 <div className="w-4 h-4 rounded-full" style={{ backgroundColor: zone.color }}></div>
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{zone.name}</span>
