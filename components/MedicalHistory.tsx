@@ -10,7 +10,7 @@ export default function MedicalHistory() {
 
   return (
     <div className="bg-[#fafbff] rounded-xl p-6 shadow-sm mb-6 mt-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Medical History</h3>
+      <h3 className="text-lg font-semibold text-blue-800 mb-4">Medical History</h3>
 
       <div className="space-y-3">
         {medicalHistory.map((item, index) => (

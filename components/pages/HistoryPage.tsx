@@ -59,7 +59,7 @@ export default function HistoryPage() {
   return (
     <div className="p-6 overflow-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">Patient History</h1>
+        <h1 className="text-3xl font-bold text-blue-800">Patient History</h1>
         <p className="text-gray-500">Detailed medical history and progress tracking</p>
       </div>
 

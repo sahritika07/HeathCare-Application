@@ -35,7 +35,7 @@ export default function DashboardMainContent({
             <Bell className="w-5 h-5" />
           </Button>
           </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mt-4">Dashboard</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-blue-800 dark:text-gray-100 mt-4">Dashboard</h1>
       </div>
 
       {/* 1. Enhanced Anatomy Section */}

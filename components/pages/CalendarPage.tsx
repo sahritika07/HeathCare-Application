@@ -93,7 +93,7 @@ export default function CalendarPage() {
     <div className="p-6 overflow-auto">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Calendar</h1>
+          <h1 className="text-3xl font-bold text-blue-800">Calendar</h1>
           <p className="text-gray-500">View and manage your appointments</p>
         </div>
         <div className="flex items-center space-x-2">

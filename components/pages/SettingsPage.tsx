@@ -33,7 +33,7 @@ export default function SettingsPage() {
   return (
     <div className="p-6 overflow-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+        <h1 className="text-3xl font-bold text-blue-800">Settings</h1>
         <p className="text-gray-500">Manage your account preferences and privacy settings</p>
       </div>
 

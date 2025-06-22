@@ -110,7 +110,7 @@ export default function AppointmentsPage() {
     <div className="p-6 overflow-auto">
       <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Appointments</h1>
+          <h1 className="text-3xl font-bold text-blue-800">Appointments</h1>
           <p className="text-gray-500">Manage your upcoming and past appointments</p>
         </div>
 

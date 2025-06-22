@@ -90,7 +90,7 @@ export default function ChatPage() {
       {/* Doctor List */}
       <div className="w-1/4 bg-white border-r border-gray-200">
         <div className="p-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900">Messages</h2>
+          <h2 className="text-lg font-semibold text-blue-800">Messages</h2>
         </div>
         <div className="overflow-y-auto h-[calc(100%-60px)]">
           {doctors.map((doctor) => (

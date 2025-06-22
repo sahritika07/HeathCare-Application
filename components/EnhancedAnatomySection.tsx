@@ -4,7 +4,7 @@ export default function EnhancedAnatomySection() {
   const healthData = [
     {
       organ: "Lungs",
-      date: "26 Okt 2021",
+      date: "26 May 2025",
       status: "warning",
       icon: "🫁",
       color: "red",
@@ -29,7 +29,7 @@ export default function EnhancedAnatomySection() {
     },
     {
       organ: "Teeth",
-      date: "26 Okt 2021",
+      date: "7 June 2025",
       status: "healthy",
       icon: "🦷",
       color: "cyan",
@@ -45,7 +45,7 @@ export default function EnhancedAnatomySection() {
     },
     {
       organ: "Bone",
-      date: "26 Okt 2021",
+      date: "15 june 2025",
       status: "attention",
       icon: "🦴",
       color: "orange",

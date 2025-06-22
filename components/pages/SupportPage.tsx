@@ -59,7 +59,7 @@ export default function SupportPage() {
   return (
     <div className="p-6 overflow-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">Support Center</h1>
+        <h1 className="text-3xl font-bold text-blue-800">Support Center</h1>
         <p className="text-gray-500">Get help and support for your healthcare needs</p>
       </div>
 
