@@ -4,21 +4,10 @@ import { AreaChart, Area, ResponsiveContainer } from "recharts"
 import { ChevronDown } from "lucide-react"
 
 export default function HealthScoreSection() {
-  // Mock health score data over time
   const healthScoreData = [
-    { value: 85 },
-    { value: 62 },
-    { value: 78 },
-    { value: 75 },
-    { value: 40 },
-    { value: 82 },
-    { value: 55 },
-    { value: 88 },
-    { value: 75 },
-    { value: 50 },
-    { value: 78 },
-    { value: 40 },
-    { value: 85 },
+    { value: 85 }, { value: 62 }, { value: 78 }, { value: 75 }, { value: 40 },
+    { value: 82 }, { value: 55 }, { value: 88 }, { value: 75 }, { value: 50 },
+    { value: 78 }, { value: 40 }, { value: 85 },
   ]
 
   const sleepData = [
@@ -65,10 +54,10 @@ export default function HealthScoreSection() {
   ]
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
+    <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm mb-6">
       {/* Health Score Chart */}
       <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 gap-2">
           <div className="flex items-center space-x-2">
             <div className="w-6 h-6 bg-purple-600 rounded flex items-center justify-center">
               <span className="text-white text-xs">+</span>
@@ -76,7 +65,7 @@ export default function HealthScoreSection() {
             <span className="text-2xl font-bold text-gray-900">98.2%</span>
             <span className="text-gray-500">Health Score</span>
           </div>
-          <div className="flex space-x-2 text-xs text-gray-500">
+          <div className="flex flex-wrap gap-2 text-xs text-gray-500">
             <span className="bg-gray-100 px-2 py-1 rounded">1d</span>
             <span className="bg-gray-100 px-2 py-1 rounded">1w</span>
             <span className="bg-gray-100 px-2 py-1 rounded">1y</span>
@@ -109,29 +98,30 @@ export default function HealthScoreSection() {
 
       {/* Sleep Tracking Table */}
       <div>
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
           <div className="flex items-center space-x-1">
             <h3 className="text-base font-medium text-gray-900">Sleep Level</h3>
             <ChevronDown className="w-4 h-4 text-gray-500" />
           </div>
-          <div className="grid grid-cols-3 gap-8 text-sm text-gray-500">
-            <span>Sleep Score</span>
-            <span>Sleep Score</span>
+          <div className="hidden sm:grid grid-cols-3 gap-8 text-sm text-gray-500">
             <span>Sleep Score</span>
           </div>
         </div>
 
         <div className="space-y-4">
           {sleepData.map((item, index) => (
-            <div key={index} className="flex items-center justify-between">
-              <div className="flex-1">
-                <span className="text-sm text-gray-900">{item.duration}</span>
-              </div>
+            <div
+              key={index}
+              className="flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4 bg-gray-50 p-3 rounded-md"
+            >
+              <div className="text-sm text-gray-900 w-full md:w-1/4">{item.duration}</div>
 
-              <div className="flex items-center space-x-8 flex-1">
-                <span className={`text-xs px-2 py-1 rounded ${item.scoreColor}`}>{item.score}</span>
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-between md:justify-start gap-3 w-full md:w-3/4">
+                <span className={`text-xs px-2 py-1 rounded ${item.scoreColor}`}>
+                  {item.score}
+                </span>
 
-                <div className="flex-1 max-w-24">
+                <div className="flex-1 max-w-xs w-full">
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
                       className={`h-2 rounded-full ${item.progressColor}`}

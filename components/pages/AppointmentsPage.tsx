@@ -20,7 +20,7 @@ export default function AppointmentsPage() {
       doctor: {
         name: "Dr. Emily Parker",
         specialty: "General Physician",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "/images/doc.jpg",
       },
       date: "June 15, 2025",
       time: "09:00 AM",
@@ -33,7 +33,7 @@ export default function AppointmentsPage() {
       doctor: {
         name: "Dr. Cameron Williamson",
         specialty: "Dentist",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "/images/doc1.png",
       },
       date: "June 20, 2025",
       time: "02:00 PM",
@@ -44,9 +44,9 @@ export default function AppointmentsPage() {
     {
       id: 3,
       doctor: {
-        name: "Dr. Kevin Djones",
+        name: "Dr. Rose Djones",
         specialty: "Physiotherapist",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "/images/doc3.png",
       },
       date: "May 28, 2025",
       time: "11:00 AM",
@@ -59,7 +59,7 @@ export default function AppointmentsPage() {
       doctor: {
         name: "Dr. Maria Rodriguez",
         specialty: "Cardiologist",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "/images/doc2.jpg",
       },
       date: "May 15, 2025",
       time: "10:30 AM",
@@ -70,9 +70,9 @@ export default function AppointmentsPage() {
     {
       id: 5,
       doctor: {
-        name: "Dr. Robert Williams",
+        name: "Dr. Julie Williams",
         specialty: "Neurologist",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "/images/doc.jpg",
       },
       date: "June 5, 2025",
       time: "03:15 PM",
@@ -135,9 +135,9 @@ export default function AppointmentsPage() {
                   <SelectContent>
                     <SelectItem value="dr-parker">Dr. Emily Parker (General Physician)</SelectItem>
                     <SelectItem value="dr-williamson">Dr. Cameron Williamson (Dentist)</SelectItem>
-                    <SelectItem value="dr-djones">Dr. Kevin Djones (Physiotherapist)</SelectItem>
+                    <SelectItem value="dr-djones">Dr. Rose Djones (Physiotherapist)</SelectItem>
                     <SelectItem value="dr-rodriguez">Dr. Maria Rodriguez (Cardiologist)</SelectItem>
-                    <SelectItem value="dr-williams">Dr. Robert Williams (Neurologist)</SelectItem>
+                    <SelectItem value="dr-williams">Dr. Julie Williams (Neurologist)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -225,9 +225,10 @@ export default function AppointmentsPage() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <Avatar className="h-12 w-12">
-                    <AvatarImage src={appointment.doctor.avatar || "/placeholder.svg"} />
+                    <AvatarImage src={appointment.doctor.avatar || "/placeholder.svg"} className="w-12 h-12 object-cover rounded-full"  />
                     <AvatarFallback>{appointment.doctor.name.charAt(0)}</AvatarFallback>
                   </Avatar>
+                  
                   <div>
                     <h3 className="font-semibold text-gray-900">{appointment.doctor.name}</h3>
                     <p className="text-sm text-gray-500">{appointment.doctor.specialty}</p>

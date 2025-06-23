@@ -31,8 +31,11 @@ export default function UserProfile({ userProfile, onEditProfile }: UserProfileP
 
         <Avatar className="w-20 h-20">
   <AvatarImage
-    src={userProfile?.imageUrl || "/images/pic.png"} // Default image fallback
-    alt={userProfile?.name || "User Avatar"}
+    src={userProfile?.imageUrl || "/images/user2.jpg"   } // Default image fallback
+    alt={userProfile?.name || "User Avatar"
+      
+    }
+    // className="w-12 h-12 object-cover rounded-full"
   />
   <AvatarFallback className="bg-gray-200 text-gray-600 text-lg">
     {userProfile?.name

@@ -57,17 +57,17 @@ export default function HistoryPage() {
   ]
 
   return (
-    <div className="p-6 overflow-auto">
+    <div className="p-4 md:p-6 overflow-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-blue-800">Patient History</h1>
-        <p className="text-gray-500">Detailed medical history and progress tracking</p>
+        <h1 className="text-2xl md:text-3xl font-bold text-blue-800">Patient History</h1>
+        <p className="text-gray-500 text-sm md:text-base">Detailed medical history and progress tracking</p>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8">
         {historyData.map((monthData, monthIndex) => (
           <div key={monthIndex} className="bg-white rounded-xl shadow-sm overflow-hidden">
             <div className="bg-indigo-50 p-4 border-b border-indigo-100">
-              <h2 className="text-xl font-semibold text-indigo-900 flex items-center">
+              <h2 className="text-lg md:text-xl font-semibold text-indigo-900 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 {monthData.month}
               </h2>
@@ -75,20 +75,20 @@ export default function HistoryPage() {
 
             <div className="divide-y divide-gray-100">
               {monthData.entries.map((entry, entryIndex) => (
-                <div key={entryIndex} className="p-6">
-                  <div className="flex items-start justify-between mb-4">
+                <div key={entryIndex} className="p-4 md:p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{entry.title}</h3>
-                      <div className="flex items-center text-sm text-gray-500 mt-1">
+                      <h3 className="text-base md:text-lg font-semibold text-gray-900">{entry.title}</h3>
+                      <div className="flex flex-wrap items-center text-sm text-gray-500 mt-1">
                         <Clock className="w-4 h-4 mr-1" />
                         {entry.date}
-                        <span className="mx-2">•</span>
-                        {entry.doctor}
+                        <span className="mx-2 hidden sm:inline">•</span>
+                        <span>{entry.doctor}</span>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-4">{entry.details}</p>
+                  <p className="text-gray-700 text-sm md:text-base mb-4">{entry.details}</p>
 
                   <div className="bg-gray-50 rounded-lg p-4">
                     <h4 className="text-sm font-medium text-gray-700 mb-3 flex items-center">
@@ -98,18 +98,21 @@ export default function HistoryPage() {
 
                     <div className="space-y-3">
                       {entry.targets.map((target, targetIndex) => (
-                        <div key={targetIndex} className="flex items-center justify-between">
+                        <div
+                          key={targetIndex}
+                          className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm gap-1"
+                        >
                           <div className="flex items-center">
                             {target.status === "achieved" ? (
                               <Award className="w-4 h-4 text-green-500 mr-2" />
                             ) : (
                               <div className="w-4 h-4 rounded-full border-2 border-orange-400 mr-2"></div>
                             )}
-                            <span className="text-sm font-medium">{target.name}</span>
+                            <span className="font-medium">{target.name}</span>
                           </div>
-                          <div className="text-sm">
-                            <span className="text-gray-500">Target: {target.target}</span>
-                            <span className="mx-2">|</span>
+                          <div className="flex flex-wrap gap-1 text-gray-500">
+                            <span>Target: {target.target}</span>
+                            <span className="mx-2 hidden sm:inline">|</span>
                             <span
                               className={
                                 target.status === "achieved"

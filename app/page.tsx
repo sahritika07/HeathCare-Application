@@ -45,13 +45,13 @@ export default function HealthcareDashboard() {
 
   // User profile state
   const [userProfile, setUserProfile] = useState({
-    name: "JOHNSON",
-    age: 35,
+    name: "Sam Walker",
+    age: 32,
     gender: "Male",
     weight: 67,
     height: 175,
     bloodGroup: "A+",
-    email: "alanwalker@email.com",
+    email: "samwalker@email.com",
     phone: "+1 (555) 123-4567",
     address: "123 Health Street, Medical City, MC 12345",
     emergencyContact: "Jane Dylan - +1 (555) 987-6543",
