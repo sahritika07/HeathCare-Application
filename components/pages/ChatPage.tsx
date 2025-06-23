@@ -14,28 +14,28 @@ export default function ChatPage() {
       id: 1,
       name: "Dr. Emily Parker",
       specialty: "General Physician",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/doc.jpg",
       online: true,
     },
     {
       id: 2,
-      name: "Dr. Cameron Williamson",
+      name: "Dr. Kevin Williamson",
       specialty: "Dentist",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/doc1.png",
       online: true,
     },
     {
       id: 3,
-      name: "Dr. Kevin Djones",
+      name: "Dr. Rose Djones",
       specialty: "Physiotherapist",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/doc2.jpg",
       online: false,
     },
     {
       id: 4,
       name: "Dr. Maria Rodriguez",
       specialty: "Cardiologist",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/doc3.png",
       online: false,
     },
   ]
@@ -79,8 +79,6 @@ export default function ChatPage() {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      // In a real app, you would add the message to the messages array
-      // and potentially send it to a backend
       setMessage("")
     }
   }
@@ -103,10 +101,10 @@ export default function ChatPage() {
             >
               <div className="flex items-center space-x-3">
                 <div className="relative">
-                  <Avatar>
-                    <AvatarImage src={doctor.avatar || "/placeholder.svg"} />
-                    <AvatarFallback>{doctor.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
+                  <Avatar className="w-12 h-12">
+  <AvatarImage src={doctor.avatar} className="w-12 h-12 object-cover rounded-full" />
+  <AvatarFallback>{doctor.name.charAt(0)}</AvatarFallback>
+</Avatar>
                   {doctor.online && (
                     <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
                   )}
@@ -126,10 +124,10 @@ export default function ChatPage() {
         {/* Chat Header */}
         <div className="bg-white p-4 border-b border-gray-200 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Avatar>
-              <AvatarImage src={selectedDoctor.avatar || "/placeholder.svg"} />
-              <AvatarFallback>{selectedDoctor.name.charAt(0)}</AvatarFallback>
-            </Avatar>
+            <Avatar className="w-12 h-12">
+  <AvatarImage src={selectedDoctor.avatar} className="w-12 h-12 object-cover rounded-full" />
+  <AvatarFallback>{selectedDoctor.name.charAt(0)}</AvatarFallback>
+</Avatar>
             <div>
               <h2 className="text-lg font-semibold text-gray-900">{selectedDoctor.name}</h2>
               <p className="text-sm text-gray-500">{selectedDoctor.online ? "Online" : "Offline"}</p>
