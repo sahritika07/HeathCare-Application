@@ -9,10 +9,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import SuccessPopover from "../../components/SuccessPopover"
 
 export default function AppointmentsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [filterStatus, setFilterStatus] = useState("all")
+  const [success, setSuccess] = useState(false);
+const [openDialog, setOpenDialog] = useState(false);
+
 
   const appointments = [
     {
@@ -93,6 +97,16 @@ export default function AppointmentsPage() {
     return matchesSearch && matchesFilter
   })
 
+  const handleSubmitAppointment = (e: any) => {
+    e.preventDefault();
+
+    // close dialog
+    setOpenDialog(false);
+
+    // show success popover
+    setSuccess(true);
+  };
+
   const getStatusBadgeClass = (status: string) => {
     switch (status) {
       case "upcoming":
@@ -114,52 +128,56 @@ export default function AppointmentsPage() {
           <p className="text-gray-500">Manage your upcoming and past appointments</p>
         </div>
 
-        <Dialog>
+        <Dialog open={openDialog} onOpenChange={setOpenDialog}>
           <DialogTrigger asChild>
             <Button className="bg-indigo-600 hover:bg-indigo-700">
               <Plus className="w-4 h-4 mr-2" />
               New Appointment
             </Button>
           </DialogTrigger>
+
           <DialogContent className="sm:max-w-[500px]">
             <DialogHeader>
               <DialogTitle>Schedule New Appointment</DialogTitle>
             </DialogHeader>
-            <div className="space-y-4 py-4">
-              <div className="space-y-2">
-                <Label htmlFor="doctor">Select Doctor</Label>
-                <Select>
+
+            {/* ✅ FORM START */}
+            <form onSubmit={handleSubmitAppointment} className="space-y-4 py-4">
+
+              <div className="space-y-2 ">
+                <Label >Select Doctor</Label>
+                <Select required>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a doctor" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="dr-parker">Dr. Emily Parker (General Physician)</SelectItem>
-                    <SelectItem value="dr-williamson">Dr. Cameron Williamson (Dentist)</SelectItem>
-                    <SelectItem value="dr-djones">Dr. Rose Djones (Physiotherapist)</SelectItem>
-                    <SelectItem value="dr-rodriguez">Dr. Maria Rodriguez (Cardiologist)</SelectItem>
-                    <SelectItem value="dr-williams">Dr. Julie Williams (Neurologist)</SelectItem>
+                    <SelectItem value="dr-parker">Dr. Emily Parker</SelectItem>
+                    <SelectItem value="dr-williamson">Dr. Cameron Williamson</SelectItem>
+                    <SelectItem value="dr-djones">Dr. Rose Djones</SelectItem>
+                    <SelectItem value="dr-rodriguez">Dr. Maria Rodriguez</SelectItem>
+                    <SelectItem value="dr-williams">Dr. Julie Williams</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="date">Date</Label>
-                  <Input id="date" type="date" />
+                  <Label>Date</Label>
+                  <Input type="date" required />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="time">Time</Label>
-                  <Input id="time" type="time" />
+                  <Label>Time</Label>
+                  <Input type="time" required />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="reason">Reason for Visit</Label>
-                <Textarea id="reason" placeholder="Briefly describe the reason for your appointment" />
+                <Label>Reason for Visit</Label>
+                <Textarea required />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
+                <Label>Location</Label>
                 <Select defaultValue="main-hospital">
                   <SelectTrigger>
                     <SelectValue />
@@ -172,16 +190,30 @@ export default function AppointmentsPage() {
                   </SelectContent>
                 </Select>
               </div>
-            </div>
-            <div className="flex justify-end gap-3">
-              <DialogTrigger asChild>
-                <Button variant="outline">Cancel</Button>
-              </DialogTrigger>
-              <Button className="bg-indigo-600 hover:bg-indigo-700">Schedule Appointment</Button>
-            </div>
+
+              <div className="flex justify-end gap-3 pt-4">
+                <Button type="button" variant="outline" onClick={() => setOpenDialog(false)}>
+                  Cancel
+                </Button>
+                <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700">
+                  Schedule Appointment
+                </Button>
+              </div>
+            </form>
+            {/* ✅ FORM END */}
+
           </DialogContent>
         </Dialog>
+
       </div>
+
+      <SuccessPopover
+        open={success}
+        title="Appointment Scheduled ✅"
+        message="Your appointment has been successfully booked."
+        onClose={() => setSuccess(false)}
+      />
+
 
       {/* Search and Filter */}
       <div className="mb-6 flex flex-col md:flex-row gap-4">
@@ -210,6 +242,7 @@ export default function AppointmentsPage() {
         </div>
       </div>
 
+
       {/* Appointments List */}
       <div className="space-y-4">
         {filteredAppointments.length === 0 ? (
@@ -225,10 +258,10 @@ export default function AppointmentsPage() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <Avatar className="h-12 w-12">
-                    <AvatarImage src={appointment.doctor.avatar || "/placeholder.svg"} className="w-12 h-12 object-cover rounded-full"  />
+                    <AvatarImage src={appointment.doctor.avatar || "/placeholder.svg"} className="w-12 h-12 object-cover rounded-full" />
                     <AvatarFallback>{appointment.doctor.name.charAt(0)}</AvatarFallback>
                   </Avatar>
-                  
+
                   <div>
                     <h3 className="font-semibold text-gray-900">{appointment.doctor.name}</h3>
                     <p className="text-sm text-gray-500">{appointment.doctor.specialty}</p>
