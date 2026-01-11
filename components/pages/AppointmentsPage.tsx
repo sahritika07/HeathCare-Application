@@ -144,8 +144,7 @@ const [openDialog, setOpenDialog] = useState(false);
             {/* ✅ FORM START */}
             <form onSubmit={handleSubmitAppointment} className="space-y-4 py-4">
 
-              <div className="space-y-2 ">
-                
+              <div className="space-y-2 ">            
 
                 <Label >Select Doctor</Label>
                 <Select required>
@@ -203,7 +202,6 @@ const [openDialog, setOpenDialog] = useState(false);
               </div>
             </form>
             {/* ✅ FORM END */}
-
           </DialogContent>
         </Dialog>
 
