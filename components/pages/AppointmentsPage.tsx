@@ -234,6 +234,8 @@ const [openDialog, setOpenDialog] = useState(false);
             <SelectTrigger className="w-[180px]">
               <SelectValue />
             </SelectTrigger>
+
+            
             <SelectContent>
               <SelectItem value="all">All Appointments</SelectItem>
               <SelectItem value="upcoming">Upcoming</SelectItem>
